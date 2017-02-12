@@ -16,6 +16,7 @@ public:
     virtual uint16_t getR() = 0;
     virtual uint16_t getG() = 0;
     virtual uint16_t getB() = 0;
+    virtual uint16_t getW() = 0;
 };
 
 class Robot {
