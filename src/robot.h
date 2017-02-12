@@ -3,7 +3,7 @@
 
 class Motor {
 public:
-    virtual void drive(int_16t speed) = 0;
+    virtual void drive(int16_t speed) = 0;
 };
 
 class LineSensor {
