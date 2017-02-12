@@ -26,14 +26,14 @@ public:
     virtual ~SimulatedSensor() = 0;
 };
 
-class SimulatedColorLineSensor : public SimulatedLineSensor, SimulatedSensor {
+class SimulatedColorLineSensor : public LineSensor, SimulatedSensor {
 public:
     SimulatedColorLineSensor();
 
     virtual bool isLine() override;
 };
 
-class SimulatedDigitalLineSensor : public SimulatedLineSenso, SimulatedSensor {
+class SimulatedDigitalLineSensor : public LineSensor, SimulatedSensor {
 public:
     SimulatedDigitalLineSensor();
 
