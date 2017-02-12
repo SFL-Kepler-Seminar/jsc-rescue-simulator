@@ -5,10 +5,12 @@
 #pragma once
 
 #include "robot.h"
+#include "Playground.h"
 
 class SimulatedMotor : public Motor {
 public:
     SimulatedMotor();
+
     void drive(int16_t speed) override;
 };
 
@@ -17,15 +19,24 @@ public:
     SimulatedRobot();
 };
 
-class SimulatedColorLineSensor:public SimulatedDigitalLineSensor {
+class SimulatedSensor {
+protected:
+    Playground *playground;
+public:
+    virtual ~SimulatedSensor() = 0;
+};
+
+class SimulatedColorLineSensor : public SimulatedLineSensor, SimulatedSensor {
 public:
     SimulatedColorLineSensor();
+
     virtual bool isLine() override;
 };
 
-class SimulatedDigitalLineSensor:public LineSensor {
+class SimulatedDigitalLineSensor : public SimulatedLineSenso, SimulatedSensor {
 public:
     SimulatedDigitalLineSensor();
-    bool isLine() override ;
+
+    bool isLine() override;
 
 };
